@@ -1,0 +1,116 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    background-color: #121212;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.video-player {
+    max-width: 750px;
+    position: relative;
+    overflow: hidden;
+}
+
+.video {
+    width: 100%;
+}
+
+.time {
+    color: white;
+    font-size: 1em;
+    width: 15%;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-controls {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(100%) translateY(0);
+    transition: .3s;
+    flex-wrap: wrap;
+    background: rgba(0,0,0,0.6);
+}
+
+.video-player:hover .player-controls{
+    transform: translateY(0);
+}
+
+.play-button {
+    width: 10%;
+    border: none;
+    background: transparent;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.play-button:focus {
+    outline: none;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    background: transparent;
+    margin: 0;
+    width: 15%;
+    padding: 0 10px;
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 10px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 12px;
+    width: 12px;
+    background: rgb(194, 40, 194);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.video-progress {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 5px;
+    transition: .3s;
+    background: rgba(0,0,0,0.6);
+    cursor: pointer;
+}
+
+.video-progress-filled {
+    width: 0;
+    background: rgb(194, 40, 194);
+}
+
+.video-player:hover .video-progress {
+    height: 5px;
+}

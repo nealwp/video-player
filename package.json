@@ -3,9 +3,16 @@
   "version": "1.0.0",
   "description": "making a video player as a personal side project",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nealwp/video-player.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "nealwp",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "videojs-event-tracking": "^1.0.2"
+  }
 }
