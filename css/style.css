@@ -1,5 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Quicksand);
+
 html {
     box-sizing: border-box;
+    font-family: Quicksand;
 }
 
 *,
@@ -33,7 +36,6 @@ body {
     font-size: 1em;
     width: 15%;
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,7 +49,7 @@ body {
     transform: translateY(100%) translateY(0);
     transition: .3s;
     flex-wrap: wrap;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0);
 }
 
 .video-player:hover .player-controls{
@@ -56,10 +58,10 @@ body {
 
 .play-button {
     width: 10%;
+    padding: 10px;
     border: none;
     background: transparent;
     color: white;
-    padding: 10px;
     cursor: pointer;
 }
 
@@ -67,33 +69,44 @@ body {
     outline: none;
 }
 
-input[type="range"] {
+.volume-button {
+    border: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+#volume-slider {
     -webkit-appearance: none;
     background: transparent;
+    height: 4px;
+    outline: none;
     margin: 0;
-    width: 15%;
-    padding: 0 10px;
+    width: 0%;
+    border-radius: 2px;
+    margin-top: auto;
+    margin-bottom: auto;
+    visibility: hidden;
+
+    transition: width 0.3s, visibility 0.2s;
 }
 
 input[type="range"]:focus {
     outline: none;
 }
 
-input[type="range"]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 10px;
-    cursor: pointer;
-    background-color: black;
-    border-radius: 10px;
-}
 
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 12px;
     width: 12px;
     background: rgb(194, 40, 194);
-    cursor: pointer;
+    cursor: grab;
     border-radius: 10px;
+}
+
+input[type="range"]::-webkit-slider-thumb:active:hover {
+    cursor: grabbing;
 }
 
 .video-progress {
@@ -104,6 +117,7 @@ input[type="range"]::-webkit-slider-thumb {
     transition: .3s;
     background: rgba(0,0,0,0.6);
     cursor: pointer;
+    transform: translateY(-3px);
 }
 
 .video-progress-filled {
